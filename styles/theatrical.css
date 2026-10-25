@@ -1,0 +1,27 @@
+/**
+ * Theatrical accents (use sparingly — landing hero / rare moments only)
+ * 1) Film grain / stage dust overlay
+ * 2) Ember glow on logo or primary CTA
+ * Do NOT apply broadly in companion app chrome.
+ */
+
+.fc-grain::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0.07;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+}
+
+.fc-ember-glow {
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--fc-ember) 35%, transparent),
+    0 0 24px color-mix(in srgb, var(--fc-ember) 28%, transparent),
+    0 0 48px color-mix(in srgb, var(--fc-rust) 18%, transparent);
+}
+
+.fc-ember-text-glow {
+  text-shadow: 0 0 28px color-mix(in srgb, var(--fc-ember) 45%, transparent);
+}

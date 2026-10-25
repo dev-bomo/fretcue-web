@@ -1,0 +1,53 @@
+/**
+ * FretCue brand tokens
+ * Even Realities companion-compatible dark system + metal accent layer.
+ * Use for phone app, landing page, and marketing.
+ */
+
+:root {
+  /* ——— Neutrals (black → gray → light) ——— */
+  --fc-black: #0a0a0a;
+  --fc-bg-deep: #121212;
+  --fc-bg: #1a1a1a;
+  --fc-surface: #232323; /* Even Realities dark surface */
+  --fc-surface-raised: #2e2e2e;
+  --fc-border: #3d3d3d;
+  --fc-muted: #5a5a5a;
+  --fc-text-dim: #7b7b7b; /* Even Realities TC-2nd */
+  --fc-text-soft: #a3a3a3;
+  --fc-text: #e5e5e5; /* Even Realities Neutral-200 */
+  --fc-text-bright: #f5f5f5;
+  --fc-white: #ffffff;
+
+  /* ——— Hot accent (primary brand heat) ——— */
+  --fc-ember: #e07a3a;
+  --fc-ember-hot: #f08a4a;
+  --fc-ember-deep: #b85c28;
+
+  /* ——— Backup accents (not monochrome) ——— */
+  --fc-rust: #8b3a2a; /* theatrical secondary / hover depth */
+  --fc-steel: #6b7c8a; /* cool map / secondary UI */
+  --fc-steel-bright: #8a9aa8;
+
+  /* ——— System (Even Realities semantic) ——— */
+  --fc-positive: #4bb956;
+  --fc-negative: #ff453a;
+  --fc-warning: #fef991; /* use sparingly */
+
+  /* ——— Semantic aliases ——— */
+  --fc-accent: var(--fc-ember);
+  --fc-accent-hover: var(--fc-ember-hot);
+  --fc-accent-pressed: var(--fc-ember-deep);
+  --fc-secondary: var(--fc-steel);
+  --fc-theatrical: var(--fc-rust);
+
+  /* ——— Layout (Even Realities rhythm) ——— */
+  --fc-radius: 6px;
+  --fc-space-0: 0;
+  --fc-space-1: 6px;
+  --fc-space-2: 12px;
+  --fc-space-3: 16px;
+  --fc-space-4: 24px;
+  --fc-margin-screen: 12px;
+  --fc-margin-section: 16px;
+}

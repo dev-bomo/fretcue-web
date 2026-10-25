@@ -1,0 +1,42 @@
+/**
+ * FretCue type tokens
+ * Product UI: FK Grotesk Neue (Even Realities). Fallback stack for local/dev.
+ * Landing: same grotesk for body; optional tighter tracking on display.
+ */
+
+:root {
+  --fc-font-sans: "FK Grotesk Neue", "Space Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --fc-font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Even-aligned scale (approx) */
+  --fc-text-xs: 11px;
+  --fc-text-sm: 12px;
+  --fc-text-md: 14px;
+  --fc-text-lg: 16px;
+  --fc-text-xl: 20px;
+  --fc-text-2xl: 28px;
+  --fc-text-display: 48px;
+
+  --fc-leading-tight: 1.15;
+  --fc-leading-body: 1.45;
+  --fc-tracking-tight: -0.02em;
+  --fc-tracking-label: 0.06em;
+}
+
+.fc-display {
+  font-family: var(--fc-font-sans);
+  font-size: var(--fc-text-display);
+  font-weight: 500;
+  line-height: var(--fc-leading-tight);
+  letter-spacing: var(--fc-tracking-tight);
+  color: var(--fc-text);
+}
+
+.fc-label {
+  font-family: var(--fc-font-sans);
+  font-size: var(--fc-text-xs);
+  font-weight: 500;
+  letter-spacing: var(--fc-tracking-label);
+  text-transform: uppercase;
+  color: var(--fc-text-dim);
+}

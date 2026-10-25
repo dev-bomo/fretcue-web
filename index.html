@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FretCue — Guitar practice cues in your field of view</title>
+    <meta
+      name="description"
+      content="FretCue is a glanceable guitar practice companion for Even Realities glasses — chords, scales, and tempo-guided fretboard drills without looking down."
+    />
+    <meta property="og:title" content="FretCue" />
+    <meta
+      property="og:description"
+      content="Guitar practice cues, right in your field of view."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#121212" />
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles/colors.css" />
+    <link rel="stylesheet" href="styles/typography.css" />
+    <link rel="stylesheet" href="styles/theatrical.css" />
+    <link rel="stylesheet" href="styles/landing.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="#top" aria-label="FretCue home">
+        <img class="site-nav__mark" src="assets/logo/mark-on-dark.svg" alt="" width="36" height="36" />
+      </a>
+      <a class="site-nav__link" href="#waitlist">Waitlist</a>
+    </nav>
+
+    <header class="hero fc-grain" id="top">
+      <div class="hero__inner">
+        <img
+          class="hero__lockup"
+          src="assets/logo/lockup-horizontal.svg"
+          alt="FretCue"
+          width="340"
+          height="104"
+        />
+
+        <h1 class="hero__headline">Guitar practice cues, right in your field of view.</h1>
+
+        <figure class="hero__pov">
+          <img
+            class="hero__pov-img"
+            src="assets/hud/wonderwall-chorus.gif"
+            alt="FretCue glasses HUD cycling Wonderwall chorus chords: Cadd9, Em7, G, Em7 with metronome beat"
+            width="1152"
+            height="632"
+          />
+          <figcaption class="hero__pov-caption">Wonderwall · Chorus — cues advance on the beat</figcaption>
+        </figure>
+
+        <div class="hero__cta-block">
+          <p class="hero__support">
+            A glanceable practice companion for Even Realities glasses — chords, scales, and
+            tempo-guided fretboard drills without looking down at your phone.
+          </p>
+
+          <form class="waitlist" id="waitlist-hero" data-waitlist novalidate>
+            <label class="visually-hidden" for="email-hero">Email</label>
+            <input
+              class="waitlist__input"
+              id="email-hero"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+              placeholder="you@email.com"
+            />
+            <button class="waitlist__submit fc-ember-glow" type="submit">Join the waitlist</button>
+            <p class="waitlist__status" role="status" aria-live="polite"></p>
+          </form>
+          <p class="hero__cta-note">Early access for guitarists with Even Realities glasses.</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="section" id="how">
+      <div class="wrap">
+        <span class="section-label">How it works</span>
+        <h2 class="section-title">Practice without breaking flow.</h2>
+        <p class="section-lede">
+          Plan on your phone. Play with your eyes up. FretCue keeps the next fingering where you
+          already look — through the lenses.
+        </p>
+        <ol class="steps">
+          <li>
+            <span class="steps__num">01</span>
+            <div>
+              <h3>Build sets on your phone</h3>
+              <p>Chords, scales, and custom drills — arrange the shapes you want to lock in.</p>
+            </div>
+          </li>
+          <li>
+            <span class="steps__num">02</span>
+            <div>
+              <h3>Run a tempo-guided session</h3>
+              <p>Step through cues at your BPM so practice stays musical, not frantic.</p>
+            </div>
+          </li>
+          <li>
+            <span class="steps__num">03</span>
+            <div>
+              <h3>See the next cue on your glasses</h3>
+              <p>Glanceable fretboard diagrams stay in view while your hands stay on the neck.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section proof" id="product">
+      <div class="wrap">
+        <span class="section-label">Product</span>
+        <h2 class="section-title">Phone to plan. Glasses to play.</h2>
+        <p class="section-lede">
+          Companion UI for sets and sessions. Glasses HUD for the cue that matters right now.
+        </p>
+
+        <div class="proof__grid">
+          <figure>
+            <div class="phone-frame" aria-hidden="true">
+              <div class="phone-frame__chrome">
+                <img src="assets/logo/mark-on-dark.svg" alt="" width="22" height="22" />
+                <span>FretCue</span>
+              </div>
+              <div class="phone-frame__label">Practice sets</div>
+              <div class="phone-frame__row">Wonderwall · Chorus<em>87 BPM · 8</em></div>
+              <div class="phone-frame__row">Wonderwall · Verse<em>87 BPM · 8</em></div>
+              <div class="phone-frame__row">Open Chords Starter<em>80 BPM · 5</em></div>
+              <div class="phone-frame__cta">Start session</div>
+            </div>
+            <figcaption class="proof__caption">Phone companion — build and launch sets</figcaption>
+          </figure>
+
+          <figure>
+            <img
+              class="proof__glasses-img"
+              src="assets/hud/wonderwall-chorus.gif"
+              alt="FretCue glasses HUD showing Wonderwall chorus chord diagrams"
+              width="1152"
+              height="632"
+            />
+            <figcaption class="proof__caption">Glasses HUD — next fingering in view</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section audience">
+      <div class="wrap">
+        <span class="section-label">Who it’s for</span>
+        <h2 class="section-title">Built for players who practice with their eyes up.</h2>
+        <p class="section-lede">
+          Whether you’re drilling open chords, learning a song’s shapes, or locking in scale
+          patterns, FretCue keeps the next fingering in view so you stay on the instrument — not
+          the screen.
+        </p>
+      </div>
+    </section>
+
+    <section class="section closing" id="waitlist">
+      <div class="wrap">
+        <span class="section-label">Early access</span>
+        <h2 class="section-title">Get on the waitlist.</h2>
+        <p class="section-lede">
+          We’re building FretCue for Even Realities. Join the list and we’ll invite you as slots
+          open.
+        </p>
+        <form class="waitlist waitlist--panel" id="waitlist-footer" data-waitlist novalidate>
+          <label class="visually-hidden" for="email-footer">Email</label>
+          <input
+            class="waitlist__input"
+            id="email-footer"
+            name="email"
+            type="email"
+            autocomplete="email"
+            required
+            placeholder="you@email.com"
+          />
+          <button class="waitlist__submit fc-ember-glow" type="submit">Notify me</button>
+          <p class="waitlist__status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p>
+        <strong>FretCue</strong> · Practice guitar, one note at a time.
+      </p>
+      <div class="site-footer__links">
+        <a href="mailto:hello@fretcue.com">Contact</a>
+        <span>Not affiliated with Even Realities</span>
+      </div>
+    </footer>
+
+    <style>
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+    </style>
+    <script type="module" src="js/waitlist.js"></script>
+    <script type="module" src="js/reveal.js"></script>
+  </body>
+</html>

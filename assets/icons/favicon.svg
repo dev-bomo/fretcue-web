@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="6" fill="#121212"/>
+  <path
+    fill="#E5E5E5"
+    d="M16 28 C16 28 7 18.5 7 12 a9 9 0 1 1 18 0 C25 18.5 16 28 16 28Z"
+  />
+  <circle cx="16" cy="12" r="7" fill="#121212"/>
+  <text
+    x="16"
+    y="14.2"
+    text-anchor="middle"
+    fill="#E07A3A"
+    font-family="FK Grotesk Neue, Space Grotesk, Helvetica Neue, Arial, sans-serif"
+    font-size="8.5"
+    font-weight="600"
+    letter-spacing="-0.4"
+  >Am</text>
+</svg>
