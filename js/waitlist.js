@@ -1,10 +1,9 @@
 /**
- * Waitlist form handler.
- *
- * Set WAITLIST_ENDPOINT to a Formspree / Loops / Getform URL when ready.
- * Until then, validated emails are stored in localStorage so the UI works end-to-end.
+ * Waitlist → FormSubmit → hello@fretcue.com
+ * First submission triggers an activation email to that inbox — confirm it once.
+ * Docs: https://formsubmit.co/ajax-documentation
  */
-const WAITLIST_ENDPOINT = '' // e.g. 'https://formspree.io/f/xxxxxx'
+const WAITLIST_ENDPOINT = 'https://formsubmit.co/ajax/hello@fretcue.com'
 
 const STORAGE_KEY = 'fretcue-waitlist'
 
@@ -12,39 +11,41 @@ function isValidEmail(value) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
 }
 
-function readLocalList() {
+function saveLocal(email) {
   try {
     const raw = localStorage.getItem(STORAGE_KEY)
-    return raw ? JSON.parse(raw) : []
+    const list = raw ? JSON.parse(raw) : []
+    if (!list.includes(email)) {
+      list.push(email)
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(list))
+    }
   } catch {
-    return []
-  }
-}
-
-function saveLocal(email) {
-  const list = readLocalList()
-  if (!list.includes(email)) {
-    list.push(email)
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(list))
+    /* ignore */
   }
 }
 
 async function submitEmail(email) {
-  if (WAITLIST_ENDPOINT) {
-    const res = await fetch(WAITLIST_ENDPOINT, {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ email, source: 'fretcue-landing' }),
-    })
-    if (!res.ok) {
-      throw new Error('Submit failed')
-    }
-    return
+  const res = await fetch(WAITLIST_ENDPOINT, {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      email,
+      source: 'fretcue-landing',
+      _subject: 'FretCue waitlist signup',
+      _template: 'table',
+      _captcha: 'false',
+    }),
+  })
+
+  const data = await res.json().catch(() => ({}))
+  if (!res.ok || data.success === 'false' || data.error) {
+    throw new Error(data.message || data.error || 'Submit failed')
   }
 
+  // Keep a local copy as backup / analytics later
   saveLocal(email)
 }
 
@@ -77,7 +78,6 @@ function bindForm(form) {
       await submitEmail(email)
       setStatus(status, 'You’re on the list. We’ll be in touch.', 'is-success')
       input.value = ''
-      // Keep sibling forms in sync messaging
       document.querySelectorAll('[data-waitlist] .waitlist__status').forEach((node) => {
         if (node !== status) {
           setStatus(node, 'You’re on the list. We’ll be in touch.', 'is-success')
