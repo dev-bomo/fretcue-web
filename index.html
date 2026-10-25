@@ -8,14 +8,39 @@
       name="description"
       content="FretCue is a glanceable guitar practice companion for Even Realities glasses — chords, scales, and tempo-guided fretboard drills without looking down."
     />
-    <meta property="og:title" content="FretCue" />
+    <meta
+      name="keywords"
+      content="guitar practice, fretboard, smart glasses, Even Realities, chords, scales, metronome, glanceable practice"
+    />
+    <meta name="author" content="FretCue" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://fretcue.com/" />
+
+    <meta property="og:site_name" content="FretCue" />
+    <meta property="og:title" content="FretCue — Guitar practice cues in your field of view" />
     <meta
       property="og:description"
-      content="Guitar practice cues, right in your field of view."
+      content="A glanceable practice companion for Even Realities glasses — chords, scales, and tempo-guided fretboard drills without looking down."
     />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://fretcue.com/" />
+    <meta property="og:image" content="https://fretcue.com/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="FretCue — Guitar practice cues in your field of view" />
+    <meta
+      name="twitter:description"
+      content="Glanceable guitar practice for Even Realities glasses — chords, scales, and tempo-guided drills."
+    />
+    <meta name="twitter:image" content="https://fretcue.com/assets/og-image.png" />
+
     <meta name="theme-color" content="#121212" />
     <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="assets/og-image.png" />
+
     <link rel="stylesheet" href="styles/colors.css" />
     <link rel="stylesheet" href="styles/typography.css" />
     <link rel="stylesheet" href="styles/theatrical.css" />
@@ -26,6 +51,58 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://fretcue.com/#organization",
+            "name": "FretCue",
+            "url": "https://fretcue.com/",
+            "logo": "https://fretcue.com/assets/logo/mark-on-dark.svg",
+            "description": "Glanceable guitar practice for Even Realities smart glasses."
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://fretcue.com/#website",
+            "url": "https://fretcue.com/",
+            "name": "FretCue",
+            "description": "Guitar practice cues, right in your field of view.",
+            "publisher": { "@id": "https://fretcue.com/#organization" },
+            "inLanguage": "en"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://fretcue.com/#app",
+            "name": "FretCue",
+            "applicationCategory": "MultimediaApplication",
+            "operatingSystem": "Even Realities",
+            "description": "A glanceable guitar practice companion for chords, scales, and tempo-guided fretboard drills on Even Realities glasses.",
+            "url": "https://fretcue.com/",
+            "image": "https://fretcue.com/assets/og-image.png",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/PreOrder"
+            },
+            "publisher": { "@id": "https://fretcue.com/#organization" }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://fretcue.com/#webpage",
+            "url": "https://fretcue.com/",
+            "name": "FretCue — Guitar practice cues in your field of view",
+            "isPartOf": { "@id": "https://fretcue.com/#website" },
+            "about": { "@id": "https://fretcue.com/#app" },
+            "description": "Join the waitlist for FretCue — glanceable guitar practice cues for Even Realities glasses.",
+            "inLanguage": "en"
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <nav class="site-nav" aria-label="Primary">
