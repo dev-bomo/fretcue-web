@@ -1,9 +1,14 @@
 /**
- * Waitlist → FormSubmit → hello@fretcue.com
- * First submission triggers an activation email to that inbox — confirm it once.
- * Docs: https://formsubmit.co/ajax-documentation
+ * Waitlist → Web3Forms → email set when the access key was created
+ * (use hello@fretcue.com so Cloudflare Email Routing delivers to your inbox).
+ *
+ * Setup: https://web3forms.com → Create Access Key → paste below → redeploy.
+ * Docs: https://docs.web3forms.com/
+ * Free: 250 submissions / month.
  */
-const WAITLIST_ENDPOINT = 'https://formsubmit.co/ajax/hello@fretcue.com'
+const WAITLIST_ENDPOINT = 'https://api.web3forms.com/submit'
+/** Public by design (alias for the destination inbox). Not a secret server key. */
+const WEB3FORMS_ACCESS_KEY = 'dbbb29d2-8332-4a30-ab0f-cd61e7d0bb46'
 
 const STORAGE_KEY = 'fretcue-waitlist'
 
@@ -25,6 +30,10 @@ function saveLocal(email) {
 }
 
 async function submitEmail(email) {
+  if (!WEB3FORMS_ACCESS_KEY || WEB3FORMS_ACCESS_KEY.startsWith('PASTE_')) {
+    throw new Error('Web3Forms access key not configured')
+  }
+
   const res = await fetch(WAITLIST_ENDPOINT, {
     method: 'POST',
     headers: {
@@ -32,17 +41,18 @@ async function submitEmail(email) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
+      access_key: WEB3FORMS_ACCESS_KEY,
       email,
+      subject: 'FretCue waitlist signup',
+      from_name: 'FretCue Waitlist',
       source: 'fretcue-landing',
-      _subject: 'FretCue waitlist signup',
-      _template: 'table',
-      _captcha: 'false',
+      botcheck: false,
     }),
   })
 
   const data = await res.json().catch(() => ({}))
-  if (!res.ok || data.success === 'false' || data.error) {
-    throw new Error(data.message || data.error || 'Submit failed')
+  if (!res.ok || data.success !== true) {
+    throw new Error(data.message || 'Submit failed')
   }
 
   // Keep a local copy as backup / analytics later
