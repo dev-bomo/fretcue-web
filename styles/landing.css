@@ -493,23 +493,25 @@ a:hover {
 }
 
 @media (max-width: 900px) {
-  .proof__grid {
+  .proof__stage {
     grid-template-columns: 1fr;
     justify-items: center;
+    gap: 28px;
   }
 
-  .proof__gallery {
-    grid-template-columns: 1fr;
-    justify-items: center;
+  .proof__device--phone {
+    width: min(260px, 72vw);
   }
 
-  .proof__phone-img {
-    max-width: min(280px, 100%);
-    margin-inline: auto;
-  }
-
-  .proof__glasses-img {
+  .proof__device--hud {
+    width: min(100%, 520px);
     max-width: none;
+  }
+
+  .proof__phones {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 520px;
+    margin-inline: auto;
   }
 
   .hero__inner {
