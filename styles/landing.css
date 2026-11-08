@@ -353,61 +353,203 @@ a:hover {
   background: var(--fc-bg);
 }
 
-.proof__caption {
+.proof__stage {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: clamp(40px, 7vw, 96px);
+  align-items: center;
+  margin-top: clamp(40px, 6vw, 64px);
+}
+
+/* Phone frame */
+.phone {
+  --phone-w: 280px;
+  position: relative;
+  width: var(--phone-w);
+  padding: 11px;
+  border-radius: 46px;
+  background: linear-gradient(145deg, #3a3a3e 0%, #1b1b1e 40%, #0d0d0f 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.14),
+    inset 0 0 0 3px #0a0a0b,
+    0 40px 80px -20px color-mix(in srgb, var(--fc-black) 80%, transparent),
+    0 0 0 1px rgba(0, 0, 0, 0.6);
+}
+
+.phone::before,
+.phone::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  border-radius: 2px;
+  background: #2a2a2e;
+}
+
+.phone::before {
+  left: -3px;
+  top: 120px;
+  height: 56px;
+  box-shadow: 0 -40px 0 -12px #2a2a2e;
+}
+
+.phone::after {
+  right: -3px;
+  top: 150px;
+  height: 80px;
+}
+
+.phone__island {
+  position: absolute;
+  z-index: 2;
+  top: 20px;
+  left: 50%;
+  width: 84px;
+  height: 24px;
+  border-radius: 999px;
+  background: #000;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.phone__screen {
+  border-radius: 36px;
+  aspect-ratio: 609 / 1024;
+  background: #121212;
+  overflow: hidden;
+}
+
+/* Carousel */
+.carousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carousel__track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+}
+
+.carousel__track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel__slide {
+  flex: 0 0 100%;
+  margin: 0;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+
+.carousel__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: top center;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.carousel__controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.carousel__arrow {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0 0 3px;
+  border: 1px solid var(--fc-border);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--fc-text-soft);
+  font: inherit;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    border-color 0.2s,
+    color 0.2s;
+}
+
+.carousel__arrow:hover {
+  border-color: var(--fc-ember);
+  color: var(--fc-text-bright);
+}
+
+.carousel__dots {
+  display: flex;
+  gap: 8px;
+}
+
+.carousel__dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: var(--fc-border);
+  cursor: pointer;
+  transition:
+    width 0.25s,
+    background 0.25s;
+}
+
+.carousel__dot[aria-current] {
+  width: 22px;
+  background: var(--fc-ember);
+}
+
+.carousel__caption {
+  min-height: 1.5em;
   margin: 12px 0 0;
   font-size: var(--fc-text-sm);
   color: var(--fc-text-dim);
   text-align: center;
 }
 
-.proof__device {
+/* Glasses HUD */
+.proof__hud {
   margin: 0;
   min-width: 0;
+  max-width: 600px;
 }
 
-.proof__device img {
+.proof__hud-label {
   display: block;
+  margin-bottom: 14px;
+  font-size: var(--fc-text-xs);
+  font-weight: 500;
+  letter-spacing: var(--fc-tracking-label);
+  text-transform: uppercase;
+  color: var(--fc-ember);
+}
+
+.proof__hud img {
   width: 100%;
   height: auto;
-  object-fit: contain;
+  border-radius: 10px;
+  border: 1px solid var(--fc-border);
   background: #000;
+  box-shadow:
+    0 0 0 6px color-mix(in srgb, var(--fc-black) 60%, transparent),
+    0 0 60px -10px rgba(57, 255, 20, 0.18),
+    0 28px 60px -16px color-mix(in srgb, var(--fc-black) 70%, transparent);
 }
 
-.proof__device--phone img {
-  border-radius: 18px;
-  border: 1px solid var(--fc-border);
-  box-shadow: 0 28px 64px color-mix(in srgb, var(--fc-black) 50%, transparent);
-}
-
-.proof__device--hud img {
-  border-radius: 8px;
-  border: 1px solid var(--fc-border);
-  box-shadow: 0 20px 48px color-mix(in srgb, var(--fc-black) 40%, transparent);
-}
-
-/* Phone + glasses as one composition */
-.proof__stage {
-  display: grid;
-  grid-template-columns: minmax(200px, 260px) minmax(0, 1fr);
-  gap: clamp(28px, 5vw, 56px);
-  align-items: center;
-  margin-top: 48px;
-}
-
-.proof__device--hud {
-  justify-self: stretch;
-  max-width: 560px;
-}
-
-/* Secondary phone screens — equal, natural portrait */
-.proof__phones {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 240px));
-  gap: clamp(20px, 4vw, 40px);
-  justify-content: center;
-  margin-top: clamp(48px, 8vw, 72px);
-  padding-top: clamp(32px, 5vw, 48px);
-  border-top: 1px solid var(--fc-border);
+.proof__hud-caption {
+  margin: 20px 0 0;
+  max-width: 46ch;
+  font-size: var(--fc-text-md);
+  color: var(--fc-text-soft);
 }
 
 /* ——— Audience ——— */
@@ -496,22 +638,16 @@ a:hover {
   .proof__stage {
     grid-template-columns: 1fr;
     justify-items: center;
-    gap: 28px;
+    gap: 48px;
   }
 
-  .proof__device--phone {
-    width: min(260px, 72vw);
+  .phone {
+    --phone-w: min(270px, 74vw);
   }
 
-  .proof__device--hud {
-    width: min(100%, 520px);
-    max-width: none;
-  }
-
-  .proof__phones {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    max-width: 520px;
-    margin-inline: auto;
+  .proof__hud {
+    width: 100%;
+    max-width: 560px;
   }
 
   .hero__inner {

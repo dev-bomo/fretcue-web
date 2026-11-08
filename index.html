@@ -203,45 +203,86 @@
         </p>
 
         <div class="proof__stage">
-          <figure class="proof__device proof__device--phone">
-            <img
-              src="assets/screens/phone-home.png"
-              alt="FretCue companion practice desk with Wish You Were Here selected"
-              width="682"
-              height="1024"
-            />
-            <figcaption class="proof__caption">Companion — pick a set and start</figcaption>
-          </figure>
+          <div
+            class="carousel"
+            role="region"
+            aria-roledescription="carousel"
+            aria-label="FretCue companion app screens"
+          >
+            <div class="phone">
+              <span class="phone__island" aria-hidden="true"></span>
+              <div class="phone__screen carousel__track" tabindex="0">
+                <figure
+                  class="carousel__slide"
+                  role="group"
+                  aria-roledescription="slide"
+                  aria-label="1 of 3"
+                  data-caption="Practice desk — pick a set and start"
+                >
+                  <img
+                    src="assets/screens/phone-home.png"
+                    alt="FretCue companion practice desk with Wish You Were Here selected"
+                    width="682"
+                    height="1024"
+                  />
+                </figure>
+                <figure
+                  class="carousel__slide"
+                  role="group"
+                  aria-roledescription="slide"
+                  aria-label="2 of 3"
+                  data-caption="Set details — review the fretboard, then play"
+                >
+                  <img
+                    src="assets/screens/phone-set-details.png"
+                    alt="FretCue set details for Mama Said with A Minor fretboard preview"
+                    width="609"
+                    height="1024"
+                    loading="lazy"
+                  />
+                </figure>
+                <figure
+                  class="carousel__slide"
+                  role="group"
+                  aria-roledescription="slide"
+                  aria-label="3 of 3"
+                  data-caption="Library — chords and scale positions"
+                >
+                  <img
+                    src="assets/screens/phone-library.png"
+                    alt="FretCue library search for C Major chords and scales"
+                    width="621"
+                    height="1024"
+                    loading="lazy"
+                  />
+                </figure>
+              </div>
+            </div>
 
-          <figure class="proof__device proof__device--hud">
+            <div class="carousel__controls">
+              <button class="carousel__arrow" type="button" data-dir="-1" aria-label="Previous screen">
+                ‹
+              </button>
+              <div class="carousel__dots"></div>
+              <button class="carousel__arrow" type="button" data-dir="1" aria-label="Next screen">
+                ›
+              </button>
+            </div>
+            <p class="carousel__caption" aria-live="polite">Practice desk — pick a set and start</p>
+          </div>
+
+          <figure class="proof__hud">
+            <span class="proof__hud-label">On your glasses</span>
             <img
               src="assets/screens/glasses-hud.png"
               alt="FretCue glasses HUD showing Wish You Were Here G chord"
               width="576"
               height="288"
             />
-            <figcaption class="proof__caption">Glasses — the cue in your field of view</figcaption>
-          </figure>
-        </div>
-
-        <div class="proof__phones">
-          <figure class="proof__device proof__device--phone">
-            <img
-              src="assets/screens/phone-set-details.png"
-              alt="FretCue set details for Mama Said with A Minor fretboard preview"
-              width="609"
-              height="1024"
-            />
-            <figcaption class="proof__caption">Review the set</figcaption>
-          </figure>
-          <figure class="proof__device proof__device--phone">
-            <img
-              src="assets/screens/phone-library.png"
-              alt="FretCue library search for C Major chords and scales"
-              width="621"
-              height="1024"
-            />
-            <figcaption class="proof__caption">Browse the library</figcaption>
+            <figcaption class="proof__hud-caption">
+              Start a set on your phone and the next chord or scale shape appears in your field of
+              view — paced to the BPM, advanced with a tap.
+            </figcaption>
           </figure>
         </div>
       </div>
@@ -310,5 +351,6 @@
     </style>
     <script type="module" src="js/waitlist.js"></script>
     <script type="module" src="js/reveal.js"></script>
+    <script type="module" src="js/carousel.js"></script>
   </body>
 </html>
