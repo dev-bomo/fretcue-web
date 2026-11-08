@@ -401,7 +401,7 @@ a:hover {
 .phone__island {
   position: absolute;
   z-index: 2;
-  top: 20px;
+  top: calc(11px + ((var(--phone-w) - 22px) * 0.137 - 24px) / 2);
   left: 50%;
   width: 84px;
   height: 24px;
@@ -411,9 +411,32 @@ a:hover {
   pointer-events: none;
 }
 
+.phone__status {
+  position: absolute;
+  z-index: 2;
+  top: 11px;
+  left: 11px;
+  right: 11px;
+  height: calc((var(--phone-w) - 22px) * 0.137);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px 0 30px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  pointer-events: none;
+}
+
+.phone__status svg {
+  width: 52px;
+  height: auto;
+}
+
 .phone__screen {
   border-radius: 36px;
-  aspect-ratio: 609 / 1024;
+  aspect-ratio: 1179 / 2556;
   background: #121212;
   overflow: hidden;
 }
