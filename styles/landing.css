@@ -216,85 +216,34 @@ a:hover {
 }
 
 
-/* ——— Waitlist form ——— */
-.waitlist {
-  display: flex;
-  flex-wrap: wrap;
+/* ——— Store CTA ——— */
+.store-cta {
+  display: inline-flex;
+  align-items: center;
   gap: 10px;
-  align-items: stretch;
-  max-width: 440px;
-}
-
-.waitlist__input {
-  flex: 1 1 200px;
-  min-width: 0;
-  padding: 14px 16px;
-  border: 1px solid var(--fc-border);
-  border-radius: var(--fc-radius);
-  background: color-mix(in srgb, var(--fc-surface) 80%, transparent);
-  color: var(--fc-text-bright);
-  font: inherit;
-  font-size: var(--fc-text-md);
-  transition: border-color 0.2s ease, background 0.2s ease;
-}
-
-.waitlist__input::placeholder {
-  color: var(--fc-text-dim);
-}
-
-.waitlist__input:hover,
-.waitlist__input:focus {
-  border-color: var(--fc-steel);
-  background: var(--fc-surface);
-  outline: none;
-}
-
-.waitlist__submit {
-  flex: 0 0 auto;
-  padding: 14px 22px;
-  border: none;
+  padding: 15px 26px;
   border-radius: var(--fc-radius);
   background: var(--fc-ember);
   color: var(--fc-black);
-  font: inherit;
   font-size: var(--fc-text-md);
   font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
-.waitlist__submit:hover:not(:disabled) {
+.store-cta:hover {
   background: var(--fc-ember-hot);
+  color: var(--fc-black);
 }
 
-.waitlist__submit:active:not(:disabled) {
+.store-cta:active {
   background: var(--fc-ember-deep);
   transform: translateY(1px);
 }
 
-.waitlist__submit:disabled {
-  opacity: 0.7;
-  cursor: wait;
-}
-
-.waitlist__status {
-  margin: 10px 0 0;
-  min-height: 1.3em;
-  font-size: var(--fc-text-sm);
-  color: var(--fc-steel-bright);
-}
-
-.waitlist__status.is-success {
-  color: var(--fc-positive);
-}
-
-.waitlist__status.is-error {
-  color: var(--fc-negative);
-}
-
-.waitlist--panel {
+.store-cta--panel {
   margin-top: 28px;
-  max-width: 480px;
 }
 
 /* ——— How it works ——— */
@@ -581,7 +530,7 @@ a:hover {
   border-bottom: 1px solid var(--fc-border);
 }
 
-/* ——— Closing waitlist ——— */
+/* ——— Closing CTA ——— */
 .closing {
   background:
     radial-gradient(
@@ -593,7 +542,7 @@ a:hover {
 }
 
 .closing .section-title {
-  max-width: 16ch;
+  max-width: 24ch;
 }
 
 /* ——— Footer ——— */
@@ -704,13 +653,9 @@ a:hover {
     text-align: left;
   }
 
-  .waitlist {
-    max-width: none;
-  }
-
-  .waitlist__input,
-  .waitlist__submit {
-    flex: 1 1 100%;
+  .store-cta {
+    width: 100%;
+    justify-content: center;
   }
 }
 

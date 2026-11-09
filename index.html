@@ -81,13 +81,8 @@
             "operatingSystem": "Even Realities",
             "description": "A glanceable guitar practice companion for chords, scales, and tempo-guided fretboard drills on Even Realities glasses.",
             "url": "https://fretcue.com/",
+            "installUrl": "https://hub.evenrealities.com/catalogue/com.fretcue.guitarpractice",
             "image": "https://fretcue.com/assets/og-image.png",
-            "offers": {
-              "@type": "Offer",
-              "price": "0",
-              "priceCurrency": "USD",
-              "availability": "https://schema.org/PreOrder"
-            },
             "publisher": { "@id": "https://fretcue.com/#organization" }
           },
           {
@@ -97,7 +92,7 @@
             "name": "FretCue — Guitar chords and scales in your field of view",
             "isPartOf": { "@id": "https://fretcue.com/#website" },
             "about": { "@id": "https://fretcue.com/#app" },
-            "description": "Join the waitlist for FretCue — glanceable guitar chords and scales for Even Realities glasses.",
+            "description": "Get FretCue on Even Hub — glanceable guitar chords and scales for Even Realities glasses.",
             "inLanguage": "en"
           }
         ]
@@ -109,7 +104,11 @@
       <a href="#top" aria-label="FretCue home">
         <img class="site-nav__mark" src="assets/logo/mark-on-dark.svg" alt="" width="36" height="36" />
       </a>
-      <a class="site-nav__link" href="#waitlist">Waitlist</a>
+      <a
+        class="site-nav__link"
+        href="https://hub.evenrealities.com/catalogue/com.fretcue.guitarpractice"
+        >Get the app</a
+      >
     </nav>
 
     <header class="hero fc-grain" id="top">
@@ -141,21 +140,13 @@
             tempo-guided fretboard drills without looking down at your phone.
           </p>
 
-          <form class="waitlist" id="waitlist-hero" data-waitlist novalidate>
-            <label class="visually-hidden" for="email-hero">Email</label>
-            <input
-              class="waitlist__input"
-              id="email-hero"
-              name="email"
-              type="email"
-              autocomplete="email"
-              required
-              placeholder="you@email.com"
-            />
-            <button class="waitlist__submit fc-ember-glow" type="submit">Join the waitlist</button>
-            <p class="waitlist__status" role="status" aria-live="polite"></p>
-          </form>
-          <p class="hero__cta-note">Early access for guitarists with Even Realities glasses.</p>
+          <a
+            class="store-cta fc-ember-glow"
+            href="https://hub.evenrealities.com/catalogue/com.fretcue.guitarpractice"
+          >
+            Get FretCue on Even Hub <span aria-hidden="true">↗</span>
+          </a>
+          <p class="hero__cta-note">Available now for Even Realities G2.</p>
         </div>
       </div>
     </header>
@@ -315,28 +306,20 @@
       </div>
     </section>
 
-    <section class="section closing" id="waitlist">
+    <section class="section closing" id="get">
       <div class="wrap">
-        <span class="section-label">Early access</span>
-        <h2 class="section-title">Get on the waitlist.</h2>
+        <span class="section-label">Available now</span>
+        <h2 class="section-title">Get FretCue on Even Hub.</h2>
         <p class="section-lede">
-          We’re building FretCue for Even Realities. Join the list and we’ll invite you as slots
-          open.
+          Open the listing on your phone, or search “FretCue” in the Even Hub tab of the Even
+          Realities app.
         </p>
-        <form class="waitlist waitlist--panel" id="waitlist-footer" data-waitlist novalidate>
-          <label class="visually-hidden" for="email-footer">Email</label>
-          <input
-            class="waitlist__input"
-            id="email-footer"
-            name="email"
-            type="email"
-            autocomplete="email"
-            required
-            placeholder="you@email.com"
-          />
-          <button class="waitlist__submit fc-ember-glow" type="submit">Notify me</button>
-          <p class="waitlist__status" role="status" aria-live="polite"></p>
-        </form>
+        <a
+          class="store-cta store-cta--panel fc-ember-glow"
+          href="https://hub.evenrealities.com/catalogue/com.fretcue.guitarpractice"
+        >
+          Get FretCue on Even Hub <span aria-hidden="true">↗</span>
+        </a>
       </div>
     </section>
 
@@ -351,20 +334,6 @@
       </div>
     </footer>
 
-    <style>
-      .visually-hidden {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border: 0;
-      }
-    </style>
-    <script type="module" src="js/waitlist.js"></script>
     <script type="module" src="js/reveal.js"></script>
     <script type="module" src="js/carousel.js"></script>
   </body>
